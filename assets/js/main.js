@@ -49,29 +49,17 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.15 });
   revealEls.forEach(el => revealObserver.observe(el));
 
-  /* ---------- Animated stat counters ---------- */
-  const statEls = document.querySelectorAll('.stat-num');
-  const animateCount = (el) => {
-    const target = parseInt(el.dataset.count, 10);
-    const duration = 1400;
-    const start = performance.now();
-    const step = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
-      el.textContent = Math.floor(progress * target);
-      if (progress < 1) requestAnimationFrame(step);
-      else el.textContent = target;
-    };
-    requestAnimationFrame(step);
-  };
-  const statObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        animateCount(entry.target);
-        statObserver.unobserve(entry.target);
-      }
+  /* ---------- Contact form tabs ---------- */
+  const tabButtons = document.querySelectorAll('.tab-btn');
+  const tabPanels = document.querySelectorAll('.tab-panel');
+  tabButtons.forEach(btn => {
+    btn.addEventListener('click', () => {
+      tabButtons.forEach(b => b.classList.remove('active'));
+      tabPanels.forEach(p => p.classList.remove('active'));
+      btn.classList.add('active');
+      document.querySelector(`.tab-panel[data-tab-panel="${btn.dataset.tab}"]`).classList.add('active');
     });
-  }, { threshold: 0.4 });
-  statEls.forEach(el => statObserver.observe(el));
+  });
 
   /* ---------- Testimonial slider ---------- */
   const track = document.getElementById('testimonialTrack');
@@ -118,33 +106,21 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  /* ---------- Contact form validation ---------- */
-  const form = document.getElementById('contactForm');
-  const successMsg = document.getElementById('formSuccess');
-  if (form) {
+  /* ---------- Contact form validation (each form posts to FormSubmit on success) ---------- */
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  document.querySelectorAll('.contact-form').forEach(form => {
     form.addEventListener('submit', (e) => {
-      e.preventDefault();
       let valid = true;
-
-      const nameField = document.getElementById('name').closest('.form-field');
-      const emailField = document.getElementById('email').closest('.form-field');
-      const messageField = document.getElementById('message').closest('.form-field');
-      const emailValue = document.getElementById('email').value.trim();
-      const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-      [nameField, emailField, messageField].forEach(f => f.classList.remove('invalid'));
-
-      if (!document.getElementById('name').value.trim()) { nameField.classList.add('invalid'); valid = false; }
-      if (!emailPattern.test(emailValue)) { emailField.classList.add('invalid'); valid = false; }
-      if (!document.getElementById('message').value.trim()) { messageField.classList.add('invalid'); valid = false; }
-
-      if (valid) {
-        successMsg.classList.add('show');
-        form.reset();
-        setTimeout(() => successMsg.classList.remove('show'), 6000);
-      }
+      form.querySelectorAll('[required]').forEach(field => {
+        const wrapper = field.closest('.form-field');
+        wrapper.classList.remove('invalid');
+        let fieldValid = field.value.trim() !== '';
+        if (fieldValid && field.type === 'email') fieldValid = emailPattern.test(field.value.trim());
+        if (!fieldValid) { wrapper.classList.add('invalid'); valid = false; }
+      });
+      if (!valid) e.preventDefault();
     });
-  }
+  });
 
   /* ---------- Footer year ---------- */
   document.getElementById('year').textContent = new Date().getFullYear();
