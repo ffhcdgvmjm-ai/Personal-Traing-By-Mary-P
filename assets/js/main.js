@@ -1,5 +1,27 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  /* ---------- Seasonal hero headline ---------- */
+  const seasonalQuotes = {
+    autumn: [
+      { prefix: 'Own your ', highlight: 'autumn reset.' },
+      { prefix: 'Build your ', highlight: 'autumn momentum.' },
+      { prefix: 'Make this ', highlight: 'autumn count.' }
+    ],
+    winter: [
+      { prefix: 'Own your ', highlight: 'winter arc.' },
+      { prefix: 'This is your ', highlight: 'winter arc.' },
+      { prefix: 'Welcome to your ', highlight: 'winter arc.' }
+    ]
+  };
+  const heroHeadline = document.getElementById('heroHeadline');
+  if (heroHeadline) {
+    const month = new Date().getMonth() + 1;
+    const isWinter = month === 12 || month === 1 || month === 2;
+    const pool = isWinter ? seasonalQuotes.winter : seasonalQuotes.autumn;
+    const quote = pool[Math.floor(Math.random() * pool.length)];
+    heroHeadline.innerHTML = `${quote.prefix}<span class="highlight">${quote.highlight}</span>`;
+  }
+
   /* ---------- Sticky header ---------- */
   const header = document.getElementById('siteHeader');
   const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 12);
