@@ -175,14 +175,17 @@ p{ margin:0 0 1em; }
 .book-title{ font-family: var(--font-display); font-size: 1.7rem; line-height:1.2; letter-spacing:.3px; margin:0 0 14px; }
 .book-tag{ font-size:.78rem; text-transform:uppercase; letter-spacing:1.5px; font-weight:700; opacity:.85; margin:0; }
 .recipebook-content h2{ font-size: clamp(2rem, 4vw, 2.8rem); color: var(--color-dark); }
-.recipe-categories{ display:grid; grid-template-columns: repeat(2, 1fr); gap: 24px 32px; margin: 28px 0 32px; }
+.recipe-categories{ display:grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin: 28px 0 32px; }
+.recipe-cat{
+  background:#fff; border: 1px solid var(--color-border); border-radius: var(--radius-md);
+  padding: 22px 14px; text-align:center;
+}
+.recipe-cat-icon{ font-size: 1.6rem; margin-bottom: 10px; }
 .recipe-cat h4{
   font-family: var(--font-body); font-weight:800; font-size:.78rem; text-transform:uppercase;
-  letter-spacing:1px; color: var(--color-accent); margin: 0 0 10px;
+  letter-spacing:.5px; color: var(--color-dark); margin: 0 0 6px;
 }
-.recipe-cat ul{ display:flex; flex-direction:column; gap: 6px; }
-.recipe-cat li{ position:relative; padding-left: 16px; font-size:.92rem; color: var(--color-text); }
-.recipe-cat li::before{ content:'•'; position:absolute; left:0; color: var(--color-accent); }
+.recipe-cat .recipe-count{ font-size:.82rem; color: var(--color-accent); font-weight:700; }
 
 /* ---------- Cards / grid ---------- */
 .grid{ display:grid; gap: 28px; }
@@ -328,6 +331,7 @@ p{ margin:0 0 1em; }
 @media (max-width: 980px){
   .about-inner, .contact-inner, .recipebook-inner{ grid-template-columns: 1fr; gap: 48px; }
   .grid-4{ grid-template-columns: repeat(2,1fr); }
+  .recipe-categories{ grid-template-columns: repeat(2,1fr); }
   .pricing-grid{ grid-template-columns: 1fr; max-width: 380px; }
   .oneoff-grid{ grid-template-columns: 1fr; max-width: 380px; }
   .steps{ grid-template-columns: repeat(2,1fr); }
@@ -347,7 +351,7 @@ p{ margin:0 0 1em; }
   .header-actions .btn-sm{ display:none; }
   .hero{ padding-top: 150px; }
   .grid-4{ grid-template-columns: 1fr; }
-  .recipe-categories{ grid-template-columns: 1fr; gap: 20px; }
+  .recipe-categories{ grid-template-columns: repeat(2,1fr); gap: 12px; }
   .steps{ grid-template-columns: 1fr; }
   .form-row{ grid-template-columns: 1fr; }
   .about-badge{ position: static; margin-top: 16px; width:100%; }
