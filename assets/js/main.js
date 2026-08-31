@@ -61,6 +61,14 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ---------- Pricing CTAs jump to the matching enquiry tab ---------- */
+  document.querySelectorAll('[data-tab-target]').forEach(el => {
+    el.addEventListener('click', () => {
+      const targetBtn = document.querySelector(`.tab-btn[data-tab="${el.dataset.tabTarget}"]`);
+      if (targetBtn) targetBtn.click();
+    });
+  });
+
   /* ---------- Testimonial slider ---------- */
   const track = document.getElementById('testimonialTrack');
   const dotsWrap = document.getElementById('sliderDots');
