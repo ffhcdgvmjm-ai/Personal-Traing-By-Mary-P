@@ -195,6 +195,7 @@ p{ margin:0 0 1em; }
 .grid-4{ grid-template-columns: repeat(4, 1fr); }
 .grid-services{ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 .pricing-grid{ grid-template-columns: repeat(2, minmax(260px, 340px)); justify-content:center; max-width: 760px; margin: 0 auto; }
+.pricing-grid.single{ grid-template-columns: minmax(260px, 380px); max-width: 380px; }
 .card{
   background:#fff; border-radius: var(--radius-md); padding: 36px 28px; border: 1px solid var(--color-border);
   transition: transform .25s ease, box-shadow .25s ease;
