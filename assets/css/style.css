@@ -169,6 +169,7 @@ p{ margin:0 0 1em; }
   width:100%; aspect-ratio: 3/4; object-fit: cover; object-position: top;
   border-radius: var(--radius-md); border: 1px solid var(--color-border); box-shadow: var(--shadow-md);
 }
+.progress-grid img:first-child{ object-position: bottom; }
 .progress-note{ font-size:.85rem; color: var(--color-text-muted); }
 
 /* ---------- Review placeholder cards ---------- */
