@@ -3,22 +3,22 @@
    ========================================================== */
 
 :root{
-  --color-bg: #f3eee4;
-  --color-bg-alt: #e8e0d1;
-  --color-dark: #1c1a17;
-  --color-dark-soft: #2e2a25;
-  --color-text: #27231e;
-  --color-text-muted: #8f8474;
-  --color-accent: #86593f;
-  --color-accent-dark: #6b4530;
-  --color-accent-soft: #f4dce1;
-  --color-blush: #f7e2e6;
-  --color-border: #e3cfd0;
+  --color-bg: #faeef1;
+  --color-bg-alt: #f3dbe1;
+  --color-dark: #3c1e27;
+  --color-dark-soft: #4e2933;
+  --color-text: #3a2028;
+  --color-text-muted: #9c7f86;
+  --color-accent: #7a4a35;
+  --color-accent-dark: #5f3826;
+  --color-accent-soft: #ecd8ce;
+  --color-blush: #f0c4cd;
+  --color-border: #e6c3cb;
   --radius-sm: 10px;
   --radius-md: 20px;
   --radius-lg: 32px;
-  --shadow-md: 0 12px 30px -12px rgba(43,33,25,0.18);
-  --shadow-lg: 0 24px 60px -20px rgba(43,33,25,0.28);
+  --shadow-md: 0 12px 30px -12px rgba(60,30,39,0.18);
+  --shadow-lg: 0 24px 60px -20px rgba(60,30,39,0.28);
   --font-display: 'Fraunces', 'Manrope', serif;
   --font-body: 'Manrope', system-ui, sans-serif;
   --max-width: 1180px;
@@ -106,9 +106,9 @@ p{ margin:0 0 1em; }
 .hero-bg{
   position:absolute; inset:0; z-index:-1;
   background:
-    radial-gradient(circle at 85% 15%, rgba(134,89,63,0.18), transparent 45%),
-    radial-gradient(circle at 25% 30%, rgba(232,166,182,0.22), transparent 40%),
-    radial-gradient(circle at 10% 90%, rgba(28,26,23,0.08), transparent 45%),
+    radial-gradient(circle at 85% 15%, rgba(140,47,66,0.16), transparent 45%),
+    radial-gradient(circle at 25% 30%, rgba(122,74,53,0.16), transparent 40%),
+    radial-gradient(circle at 10% 90%, rgba(60,30,39,0.10), transparent 45%),
     var(--color-bg);
 }
 .hero-inner{ text-align:center; max-width: 820px; }
@@ -184,7 +184,6 @@ p{ margin:0 0 1em; }
 .grid-4{ grid-template-columns: repeat(4, 1fr); }
 .grid-services{ grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
 .pricing-grid{ grid-template-columns: repeat(2, minmax(260px, 340px)); justify-content:center; max-width: 760px; margin: 0 auto; }
-.pricing-grid.single{ grid-template-columns: minmax(260px, 380px); max-width: 380px; }
 .card{
   background:#fff; border-radius: var(--radius-md); padding: 36px 28px; border: 1px solid var(--color-border);
   transition: transform .25s ease, box-shadow .25s ease;
