@@ -26,6 +26,7 @@
         <li><a href="#about" class="nav-link">About</a></li>
         <li><a href="#services" class="nav-link">Services</a></li>
         <li><a href="#challenge" class="nav-link">Challenge</a></li>
+        <li><a href="#contact" class="nav-link">Contact</a></li>
         <li><a href="#wellness" class="nav-link">Wellness</a></li>
         <li><a href="#reviews" class="nav-link">Reviews</a></li>
         <li><a href="#faq" class="nav-link">FAQ</a></li>
@@ -63,7 +64,7 @@
         <span>A Healthy Relationship With Food</span>
       </div>
       <div class="hero-cta reveal">
-        <a href="#contact" class="btn btn-primary">Get In Touch</a>
+        <a href="#contact" class="btn btn-primary" data-tab-target="call">Book A Free Call</a>
         <a href="#challenge" class="btn btn-ghost">See The Challenge</a>
       </div>
 
@@ -247,6 +248,175 @@
     </div>
   </section>
 
+  <!-- ========== CONTACT ========== -->
+  <section id="contact" class="contact section">
+    <div class="container contact-inner">
+      <div class="contact-info reveal">
+        <p class="eyebrow">Get in touch</p>
+        <h2>Ready to get started?</h2>
+        <p class="lead">Pick what you're after below — every enquiry comes straight to my inbox and I'll reply within 24 hours.</p>
+
+        <ul class="contact-details">
+          <li><strong>Email</strong><span>mary@penketh.eu</span></li>
+          <li><strong>Response time</strong><span>Within 24 hours</span></li>
+          <li><strong>Location</strong><span>100% online, worldwide</span></li>
+        </ul>
+
+        <div class="social-links">
+          <a href="https://www.instagram.com/marypenksfitness" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
+          <a href="https://www.tiktok.com/@marypenky" aria-label="TikTok" target="_blank" rel="noopener">TT</a>
+        </div>
+      </div>
+
+      <div class="contact-forms reveal">
+        <div class="contact-tabs" role="tablist">
+          <button class="tab-btn active" data-tab="call" type="button">Free Call</button>
+          <button class="tab-btn" data-tab="coaching" type="button">Coaching Enquiry</button>
+          <button class="tab-btn" data-tab="challenge" type="button">12-Week Challenge</button>
+          <button class="tab-btn" data-tab="quiz" type="button">Goals Quiz</button>
+        </div>
+
+        <form class="contact-form tab-panel active" data-tab-panel="call" action="https://formsubmit.co/mary@penketh.eu" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New Free Consultation Call Booking — Mary Penks Fitness">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <p class="lead form-note">A free, no-pressure 15-minute call so we can chat about your goals and figure out the right fit — no obligation to sign up. Tell me a bit about you and I'll send over some time slots.</p>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="call-name">Name</label>
+              <input type="text" id="call-name" name="Name" required>
+              <span class="error-msg">Please enter your name</span>
+            </div>
+            <div class="form-field">
+              <label for="call-email">Email</label>
+              <input type="email" id="call-email" name="Email" required>
+              <span class="error-msg">Please enter a valid email</span>
+            </div>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="call-timezone">Timezone / country</label>
+              <input type="text" id="call-timezone" name="Timezone" placeholder="e.g. UK, GMT">
+            </div>
+            <div class="form-field">
+              <label for="call-time">Best time to call</label>
+              <input type="text" id="call-time" name="Preferred Time" placeholder="e.g. weekday evenings">
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="call-message">What would you like to chat about?</label>
+            <textarea id="call-message" name="Notes" rows="3"></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Book My Free Call</button>
+        </form>
+
+        <form class="contact-form tab-panel" data-tab-panel="coaching" action="https://formsubmit.co/mary@penketh.eu" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New Coaching Enquiry — Mary Penks Fitness">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="coaching-name">Name</label>
+              <input type="text" id="coaching-name" name="Name" required>
+              <span class="error-msg">Please enter your name</span>
+            </div>
+            <div class="form-field">
+              <label for="coaching-email">Email</label>
+              <input type="email" id="coaching-email" name="Email" required>
+              <span class="error-msg">Please enter a valid email</span>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="coaching-message">What are you hoping to achieve?</label>
+            <textarea id="coaching-message" name="Goals" rows="5" required></textarea>
+            <span class="error-msg">Please share a bit about your goals</span>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send Coaching Enquiry</button>
+        </form>
+
+        <form class="contact-form tab-panel" data-tab-panel="challenge" action="https://formsubmit.co/mary@penketh.eu" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New 12-Week Challenge Order — Mary Penks Fitness">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <p class="lead form-note">£100 one-time for instant access to the full 12-Week Challenge — training, nutrition, lifestyle &amp; mindset content, with weekly check-ins available. I'll confirm your order and send a payment link plus access details straight to your email.</p>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="challenge-name">Name</label>
+              <input type="text" id="challenge-name" name="Name" required>
+              <span class="error-msg">Please enter your name</span>
+            </div>
+            <div class="form-field">
+              <label for="challenge-email">Email</label>
+              <input type="email" id="challenge-email" name="Email" required>
+              <span class="error-msg">Please enter a valid email</span>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Get The Challenge — £100</button>
+        </form>
+
+        <form class="contact-form tab-panel" data-tab-panel="quiz" action="https://formsubmit.co/mary@penketh.eu" method="POST" novalidate>
+          <input type="hidden" name="_subject" value="New Goals Quiz Submission — Mary Penks Fitness">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <p class="lead form-note">Answer a few quick questions and I'll personally look over your answers and reply with the best next step for you.</p>
+          <div class="form-field">
+            <label for="quiz-goal">What's your main goal right now?</label>
+            <select id="quiz-goal" name="Main Goal" required>
+              <option value="" disabled selected>Choose one</option>
+              <option>Fat loss</option>
+              <option>Build strength &amp; tone up</option>
+              <option>More energy &amp; confidence</option>
+              <option>General health &amp; better habits</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="quiz-food">How would you describe your relationship with food?</label>
+            <select id="quiz-food" name="Relationship With Food" required>
+              <option value="" disabled selected>Choose one</option>
+              <option>Pretty good, just need structure</option>
+              <option>A bit complicated</option>
+              <option>Restrictive or all-or-nothing</option>
+              <option>I don't really think about it</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="quiz-training">Do you currently train?</label>
+            <select id="quiz-training" name="Current Training" required>
+              <option value="" disabled selected>Choose one</option>
+              <option>Not at all right now</option>
+              <option>On and off</option>
+              <option>Regularly, but feel stuck</option>
+              <option>Regularly and progressing well</option>
+            </select>
+          </div>
+          <div class="form-field">
+            <label for="quiz-blocker">What trips you up the most?</label>
+            <select id="quiz-blocker" name="Biggest Blocker" required>
+              <option value="" disabled selected>Choose one</option>
+              <option>Motivation</option>
+              <option>Consistency</option>
+              <option>Time</option>
+              <option>Not knowing what to do</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <div class="form-field">
+              <label for="quiz-name">Name</label>
+              <input type="text" id="quiz-name" name="Name" required>
+              <span class="error-msg">Please enter your name</span>
+            </div>
+            <div class="form-field">
+              <label for="quiz-email">Email</label>
+              <input type="email" id="quiz-email" name="Email" required>
+              <span class="error-msg">Please enter a valid email</span>
+            </div>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Send My Quiz Answers</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== WELLNESS & LIFESTYLE ========== -->
   <section id="wellness" class="wellness section">
     <div class="container">
@@ -372,79 +542,6 @@
           <button class="accordion-trigger">What app do you use for coaching?<span>+</span></button>
           <div class="accordion-panel"><p>Training and check-ins run through a dedicated coaching app on iOS and Android, with video demos for every exercise and built-in logging.</p></div>
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== CONTACT ========== -->
-  <section id="contact" class="contact section">
-    <div class="container contact-inner">
-      <div class="contact-info reveal">
-        <p class="eyebrow">Get in touch</p>
-        <h2>Ready to get started?</h2>
-        <p class="lead">Pick what you're after below — every enquiry comes straight to my inbox and I'll reply within 24 hours.</p>
-
-        <ul class="contact-details">
-          <li><strong>Email</strong><span>mary@penketh.eu</span></li>
-          <li><strong>Response time</strong><span>Within 24 hours</span></li>
-          <li><strong>Location</strong><span>100% online, worldwide</span></li>
-        </ul>
-
-        <div class="social-links">
-          <a href="https://www.instagram.com/marypenksfitness" aria-label="Instagram" target="_blank" rel="noopener">IG</a>
-          <a href="https://www.tiktok.com/@marypenky" aria-label="TikTok" target="_blank" rel="noopener">TT</a>
-        </div>
-      </div>
-
-      <div class="contact-forms reveal">
-        <div class="contact-tabs" role="tablist">
-          <button class="tab-btn active" data-tab="coaching" type="button">Coaching Enquiry</button>
-          <button class="tab-btn" data-tab="challenge" type="button">12-Week Challenge</button>
-        </div>
-
-        <form class="contact-form tab-panel active" data-tab-panel="coaching" action="https://formsubmit.co/mary@penketh.eu" method="POST" novalidate>
-          <input type="hidden" name="_subject" value="New Coaching Enquiry — Mary Penks Fitness">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <div class="form-row">
-            <div class="form-field">
-              <label for="coaching-name">Name</label>
-              <input type="text" id="coaching-name" name="Name" required>
-              <span class="error-msg">Please enter your name</span>
-            </div>
-            <div class="form-field">
-              <label for="coaching-email">Email</label>
-              <input type="email" id="coaching-email" name="Email" required>
-              <span class="error-msg">Please enter a valid email</span>
-            </div>
-          </div>
-          <div class="form-field">
-            <label for="coaching-message">What are you hoping to achieve?</label>
-            <textarea id="coaching-message" name="Goals" rows="5" required></textarea>
-            <span class="error-msg">Please share a bit about your goals</span>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block">Send Coaching Enquiry</button>
-        </form>
-
-        <form class="contact-form tab-panel" data-tab-panel="challenge" action="https://formsubmit.co/mary@penketh.eu" method="POST" novalidate>
-          <input type="hidden" name="_subject" value="New 12-Week Challenge Order — Mary Penks Fitness">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <p class="lead form-note">£100 one-time for instant access to the full 12-Week Challenge — training, nutrition, lifestyle &amp; mindset content, with weekly check-ins available. I'll confirm your order and send a payment link plus access details straight to your email.</p>
-          <div class="form-row">
-            <div class="form-field">
-              <label for="challenge-name">Name</label>
-              <input type="text" id="challenge-name" name="Name" required>
-              <span class="error-msg">Please enter your name</span>
-            </div>
-            <div class="form-field">
-              <label for="challenge-email">Email</label>
-              <input type="email" id="challenge-email" name="Email" required>
-              <span class="error-msg">Please enter a valid email</span>
-            </div>
-          </div>
-          <button type="submit" class="btn btn-primary btn-block">Get The Challenge — £100</button>
-        </form>
       </div>
     </div>
   </section>
