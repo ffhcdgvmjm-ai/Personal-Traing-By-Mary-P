@@ -61,6 +61,70 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
+  /* ---------- Multi-step coaching quiz ---------- */
+  const quizForm = document.getElementById('coachingQuizForm');
+  if (quizForm) {
+    const steps = Array.from(quizForm.querySelectorAll('.quiz-step'));
+    const progressBar = quizForm.querySelector('.quiz-progress-bar');
+    const backBtn = quizForm.querySelector('.quiz-back');
+    const nextBtn = quizForm.querySelector('.quiz-next');
+    const submitBtn = quizForm.querySelector('.quiz-submit');
+    let stepIndex = 0;
+
+    const stepHasSelection = (index) => {
+      const optionsWrap = steps[index].querySelector('.quiz-options');
+      return !optionsWrap || !!optionsWrap.querySelector('.quiz-option.selected');
+    };
+
+    const updateNav = () => {
+      backBtn.hidden = stepIndex === 0;
+      const isLast = stepIndex === steps.length - 1;
+      nextBtn.hidden = isLast;
+      submitBtn.hidden = !isLast;
+      nextBtn.disabled = !stepHasSelection(stepIndex);
+    };
+
+    const showStep = (index) => {
+      steps.forEach((step, i) => step.classList.toggle('active', i === index));
+      progressBar.style.width = `${((index + 1) / steps.length) * 100}%`;
+      updateNav();
+    };
+
+    quizForm.querySelectorAll('.quiz-options').forEach(optionsWrap => {
+      const targetInput = document.getElementById(optionsWrap.dataset.target);
+      optionsWrap.querySelectorAll('.quiz-option').forEach(btn => {
+        btn.addEventListener('click', () => {
+          optionsWrap.querySelectorAll('.quiz-option').forEach(b => b.classList.remove('selected'));
+          btn.classList.add('selected');
+          if (targetInput) targetInput.value = btn.textContent.trim();
+          updateNav();
+        });
+      });
+    });
+
+    nextBtn.addEventListener('click', () => {
+      if (!stepHasSelection(stepIndex)) return;
+      stepIndex = Math.min(stepIndex + 1, steps.length - 1);
+      showStep(stepIndex);
+    });
+    backBtn.addEventListener('click', () => {
+      stepIndex = Math.max(stepIndex - 1, 0);
+      showStep(stepIndex);
+    });
+
+    const resetQuiz = () => {
+      stepIndex = 0;
+      quizForm.querySelectorAll('.quiz-option.selected').forEach(b => b.classList.remove('selected'));
+      quizForm.querySelectorAll('input[type="hidden"][id^="quiz-"]').forEach(input => { input.value = ''; });
+      showStep(0);
+    };
+    document.querySelectorAll('.tab-btn[data-tab="quiz"], [data-tab-target="quiz"]').forEach(el => {
+      el.addEventListener('click', resetQuiz);
+    });
+
+    showStep(0);
+  }
+
   /* ---------- Pricing CTAs jump to the matching enquiry tab ---------- */
   document.querySelectorAll('[data-tab-target]').forEach(el => {
     el.addEventListener('click', () => {

@@ -138,6 +138,31 @@
     </div>
   </section>
 
+  <!-- ========== FREE CALL CTA ========== -->
+  <section id="free-call" class="free-call section alt">
+    <div class="container free-call-inner">
+      <p class="eyebrow">More than a workout plan</p>
+      <h2 class="split-heading reveal">
+        <span class="split-heading-bold">We go deeper</span>
+        <span class="split-heading-italic">than just willpower</span>
+      </h2>
+      <p class="lead free-call-copy reveal">
+        Real change isn't just physical — it's mental. Together we work through the habits, mindset blocks,
+        and all-or-nothing thinking that have held you back, so you build a routine that actually sticks,
+        not another plan you'll quit in a few weeks.
+      </p>
+      <a href="#contact" class="btn btn-dark btn-lg reveal" data-tab-target="call">Apply For Your Free Consultation Call →</a>
+      <div class="struggle-tags reveal">
+        <span>Gym Anxiety 😰</span>
+        <span>Confidence ✨</span>
+        <span>ADHD Overwhelm 🌀</span>
+        <span>All-Or-Nothing Mindset 🔁</span>
+        <span>Self-Sabotage 🚧</span>
+        <span>Motivation Slumps 😔</span>
+      </div>
+    </div>
+  </section>
+
   <!-- ========== SERVICES ========== -->
   <section id="services" class="services section alt">
     <div class="container">
@@ -354,64 +379,81 @@
           <button type="submit" class="btn btn-primary btn-block">Get The Challenge — £100</button>
         </form>
 
-        <form class="contact-form tab-panel" data-tab-panel="quiz" action="https://formsubmit.co/mary@penketh.eu" method="POST" novalidate>
+        <form class="contact-form quiz-form tab-panel" data-tab-panel="quiz" action="https://formsubmit.co/mary@penketh.eu" method="POST" novalidate id="coachingQuizForm">
           <input type="hidden" name="_subject" value="New 1:1 Coaching Quiz — Mary Penks Fitness">
           <input type="hidden" name="_template" value="table">
           <input type="hidden" name="_captcha" value="false">
-          <p class="lead form-note">A few quick questions to help me understand your goals for 1:1 Online Coaching — I'll personally look over your answers and reply with the best next step for you.</p>
-          <div class="form-field">
-            <label for="quiz-goal">What's your main goal right now?</label>
-            <select id="quiz-goal" name="Main Goal" required>
-              <option value="" disabled selected>Choose one</option>
-              <option>Fat loss</option>
-              <option>Build strength &amp; tone up</option>
-              <option>More energy &amp; confidence</option>
-              <option>General health &amp; better habits</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label for="quiz-food">How would you describe your relationship with food?</label>
-            <select id="quiz-food" name="Relationship With Food" required>
-              <option value="" disabled selected>Choose one</option>
-              <option>Pretty good, just need structure</option>
-              <option>A bit complicated</option>
-              <option>Restrictive or all-or-nothing</option>
-              <option>I don't really think about it</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label for="quiz-training">Do you currently train?</label>
-            <select id="quiz-training" name="Current Training" required>
-              <option value="" disabled selected>Choose one</option>
-              <option>Not at all right now</option>
-              <option>On and off</option>
-              <option>Regularly, but feel stuck</option>
-              <option>Regularly and progressing well</option>
-            </select>
-          </div>
-          <div class="form-field">
-            <label for="quiz-blocker">What trips you up the most?</label>
-            <select id="quiz-blocker" name="Biggest Blocker" required>
-              <option value="" disabled selected>Choose one</option>
-              <option>Motivation</option>
-              <option>Consistency</option>
-              <option>Time</option>
-              <option>Not knowing what to do</option>
-            </select>
-          </div>
-          <div class="form-row">
-            <div class="form-field">
-              <label for="quiz-name">Name</label>
-              <input type="text" id="quiz-name" name="Name" required>
-              <span class="error-msg">Please enter your name</span>
-            </div>
-            <div class="form-field">
-              <label for="quiz-email">Email</label>
-              <input type="email" id="quiz-email" name="Email" required>
-              <span class="error-msg">Please enter a valid email</span>
+          <input type="hidden" name="Main Goal" id="quiz-goal-value">
+          <input type="hidden" name="Relationship With Food" id="quiz-food-value">
+          <input type="hidden" name="Current Training" id="quiz-training-value">
+          <input type="hidden" name="Biggest Blocker" id="quiz-blocker-value">
+
+          <div class="quiz-badge"><span class="quiz-dot"></span> Your Application</div>
+          <h3 class="quiz-title">Let's <span class="italic-accent">begin</span></h3>
+          <p class="quiz-subtitle">A few quick questions so I can get to know your goals for 1:1 coaching.</p>
+          <div class="quiz-progress"><div class="quiz-progress-bar"></div></div>
+
+          <div class="quiz-step active" data-step="1">
+            <p class="quiz-question">What's your main goal right now?</p>
+            <div class="quiz-options" data-target="quiz-goal-value">
+              <button type="button" class="quiz-option">Fat loss</button>
+              <button type="button" class="quiz-option">Build strength &amp; tone up</button>
+              <button type="button" class="quiz-option">More energy &amp; confidence</button>
+              <button type="button" class="quiz-option">General health &amp; better habits</button>
             </div>
           </div>
-          <button type="submit" class="btn btn-primary btn-block">Send My Quiz &amp; Apply For Coaching</button>
+
+          <div class="quiz-step" data-step="2">
+            <p class="quiz-question">How would you describe your relationship with food?</p>
+            <div class="quiz-options" data-target="quiz-food-value">
+              <button type="button" class="quiz-option">Pretty good, just need structure</button>
+              <button type="button" class="quiz-option">A bit complicated</button>
+              <button type="button" class="quiz-option">Restrictive or all-or-nothing</button>
+              <button type="button" class="quiz-option">I don't really think about it</button>
+            </div>
+          </div>
+
+          <div class="quiz-step" data-step="3">
+            <p class="quiz-question">Do you currently train?</p>
+            <div class="quiz-options" data-target="quiz-training-value">
+              <button type="button" class="quiz-option">Not at all right now</button>
+              <button type="button" class="quiz-option">On and off</button>
+              <button type="button" class="quiz-option">Regularly, but feel stuck</button>
+              <button type="button" class="quiz-option">Regularly and progressing well</button>
+            </div>
+          </div>
+
+          <div class="quiz-step" data-step="4">
+            <p class="quiz-question">What trips you up the most?</p>
+            <div class="quiz-options" data-target="quiz-blocker-value">
+              <button type="button" class="quiz-option">Motivation</button>
+              <button type="button" class="quiz-option">Consistency</button>
+              <button type="button" class="quiz-option">Time</button>
+              <button type="button" class="quiz-option">Not knowing what to do</button>
+            </div>
+          </div>
+
+          <div class="quiz-step" data-step="5">
+            <p class="quiz-question">Last step — where should I send your next steps?</p>
+            <div class="form-row">
+              <div class="form-field">
+                <label for="quiz-name">Name</label>
+                <input type="text" id="quiz-name" name="Name" required>
+                <span class="error-msg">Please enter your name</span>
+              </div>
+              <div class="form-field">
+                <label for="quiz-email">Email</label>
+                <input type="email" id="quiz-email" name="Email" required>
+                <span class="error-msg">Please enter a valid email</span>
+              </div>
+            </div>
+          </div>
+
+          <div class="quiz-nav">
+            <button type="button" class="btn btn-ghost btn-sm quiz-back" hidden>Back</button>
+            <button type="button" class="btn btn-primary quiz-next">Next →</button>
+            <button type="submit" class="btn btn-primary btn-block quiz-submit" hidden>Send My Quiz &amp; Apply For Coaching</button>
+          </div>
         </form>
       </div>
     </div>
