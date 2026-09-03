@@ -179,8 +179,6 @@ p{ margin:0 0 1em; }
 .review-quote{ color: var(--color-text-muted); font-style:italic; margin: 0 0 10px; }
 .review-name{ font-size:.85rem; color: var(--color-text-muted); font-weight:700; margin:0; }
 
-/* ---------- Recipe book ---------- */
-
 /* ---------- Cards / grid ---------- */
 .grid{ display:grid; gap: 28px; }
 .grid-4{ grid-template-columns: repeat(4, 1fr); }
