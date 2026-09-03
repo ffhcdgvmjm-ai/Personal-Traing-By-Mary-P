@@ -9,8 +9,8 @@
   --color-dark-soft: #4e2933;
   --color-text: #3a2028;
   --color-text-muted: #9c7f86;
-  --color-accent: #7a4a35;
-  --color-accent-dark: #5f3826;
+  --color-accent: #5c3423;
+  --color-accent-dark: #3f2317;
   --color-accent-soft: #ecd8ce;
   --color-blush: #f0c4cd;
   --color-border: #e6c3cb;
@@ -107,7 +107,7 @@ p{ margin:0 0 1em; }
   position:absolute; inset:0; z-index:-1;
   background:
     radial-gradient(circle at 85% 15%, rgba(140,47,66,0.16), transparent 45%),
-    radial-gradient(circle at 25% 30%, rgba(122,74,53,0.16), transparent 40%),
+    radial-gradient(circle at 25% 30%, rgba(92,52,35,0.16), transparent 40%),
     radial-gradient(circle at 10% 90%, rgba(60,30,39,0.10), transparent 45%),
     var(--color-bg);
 }
