@@ -133,7 +133,7 @@ p{ margin:0 0 1em; }
 }
 .headline-italic::after{
   content:''; position:absolute; left:2%; right:2%; bottom:-4px; height:20px;
-  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 20' preserveAspectRatio='none'%3E%3Cpath d='M4 15 C 100 7, 200 2, 296 4' stroke='%2393643f' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 20' preserveAspectRatio='none'%3E%3Cpath d='M4 15 C 100 7, 200 2, 296 4' stroke='%233d2417' stroke-opacity='0.8' stroke-width='4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
   background-repeat: no-repeat; background-size: 100% 100%;
 }
 .hero-sub{ font-size: 1.15rem; color: var(--color-text-muted); max-width: 620px; margin: 0 auto 28px; }
